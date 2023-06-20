@@ -201,15 +201,15 @@ class CameraFragment : Fragment(), PersonClassifier.DetectorListener {
             )
             
             // find at least one bounding box of the person
-            val isPersonDetected: Boolean = results!!.find { it.categories[0].label == "car" } != null
+            val isCarDetected: Boolean = results!!.find { it.categories[0].label == "car" } != null
             
             // change UI according to the result
-            if (isPersonDetected) {
-                personView.text = "PERSON"
+            if (isCarDetected) {
+                personView.text = "CAR"
                 personView.setBackgroundColor(ProjectConfiguration.activeBackgroundColor)
                 personView.setTextColor(ProjectConfiguration.activeTextColor)
             } else {
-                personView.text = "NO PERSON"
+                personView.text = "NO CAR"
                 personView.setBackgroundColor(ProjectConfiguration.idleBackgroundColor)
                 personView.setTextColor(ProjectConfiguration.idleTextColor)
             }
